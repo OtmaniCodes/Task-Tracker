@@ -1,0 +1,15 @@
+[u]App's Title[/u]: [b]TASK TRACKER[/b]
+[u]Version[/u]: [b]0.1[/b]
+[u]Developer[/u]: [b]Ahmed El Otmani[/b]
+[u]Email us[/u]: [b]offbusiness00@gmail.com[/b]
+
+_____________________________________________
+this app helps you keep track of your
+daily and weekly tasks in order for you to
+manage and optimize your time more efficiently.
+the app lets you accompany your task with
+a description text as well as a deadline that is
+in date and time format, which helps keeping
+your tasks managed and well organized, you can also pick out a color to determine
+the priority of your task and much much more...
+_____________________________________________

@@ -1,0 +1,138 @@
+#: kivy 1.11.1
+#: import utils kivy.utils
+
+NavigationLayout:
+    id: navigation_layout
+    ScreenManager:
+        id: screen_manager
+        Screen:
+            box1: box1
+            id: screen1
+            canvas.before:
+                Color:
+                    rgba: utils.get_color_from_hex('#FF3D00')
+                Triangle:
+                    points: [0,self.size[1], self.size[0], (self.size[1]*92)/100, 0, (self.size[1]-self.size[1]*(3/4))]
+                Color:
+                    rgba: [0,0,0,1]
+                Line:
+                    points: [self.size[0], (self.size[1]*92)/100, 0, (self.size[1]-self.size[1]*(3/4))]
+                    width: 2
+                    
+            MDToolbar:
+                id: toolb
+                elevation: 0
+                size_hint: [1, .08]
+                pos_hint: {'top':1}
+                halign: 'center'
+                spesific_text_color: [1,1,1,1]
+                title: 'task tracker'.upper()
+                bold: True
+                right_action_items: [['menu', lambda x: nav_drawer.set_state('open')]]
+            ScrollView:
+                id: scrol
+                size_hint: 1, .92
+                do_scroll_y: True
+                pos_hint: {"top":.92}
+                BoxLayout:
+                    id: box1
+                    orientation: 'vertical'
+                    spacing: 18
+                    padding: [10,18,10,10]
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: '100dp'
+                    row_force_default: True
+            MDFloatingActionButton:
+                id: adder
+                pos_hint: {"top":.16, "right":.97}
+                icon: 'calendar-plus'
+                md_bg_color: utils.get_color_from_hex("#FF3D00") 
+                theme_text_color: 'Custom'
+                text_color: utils.get_color_from_hex("#FFFFFF")
+                ele: 8
+                elevation: self.ele
+                on_press:
+                    app.anime1(self)
+                    self.text_color= utils.get_color_from_hex("#000000")
+                on_release:
+                    app.open_pop()
+                    app.r_date=''
+                    self.text_color= utils.get_color_from_hex("#FFFFFF")
+            MDIcon:
+                id: icon
+                icon: 'calendar'
+                size_hint: 1, .1
+                pos_hint: {"top":.6, 'center_x':.5}
+                font_size: '50sp'
+                halign: 'center'
+                theme_text_color: "Custom"
+                text_color: [0,0,0,.6]                  
+            MDLabel:
+                id: txtt
+                text: "tasks you add apear here...".title()
+                size_hint: 1, .1
+                pos_hint: {"top":.53, 'center_x':.5}
+                font_size: '25sp'
+                halign: 'center'
+                theme_text_color: "Custom"
+                text_color: [0,0,0,.6]
+                bold: True
+                font_style: 'H6'
+    MDNavigationDrawer:
+        id: nav_drawer
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 5
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("#FF3D00") 
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Image:
+                pos_hint: {'top':1}
+                allow_stretch: True
+                keep_rotio: False
+                source: 'avatar.png'
+            MDLabel:
+                id: score
+                text: '[u]Tasks Count[/u]: 0'
+                markup: True
+                pos_hint: {'top':.96, 'x':.1}
+                size_hint: [.5,.1]
+                bold: True
+                theme_text_color: 'Custom'
+                text_color: [0,0,0,1]
+
+            ScrollView:
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#FF3D00") 
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                MDList:
+                    OneLineIconListItem:
+                        text: 'Valuable Quote'
+                        on_release:
+                            app.quotes_generator()
+                        IconLeftWidget:
+                            icon: 'format-quote-close-outline'
+                    OneLineIconListItem:
+                        text: 'About This App'
+                        on_release:
+                            app.about_us()
+                        IconLeftWidget:
+                            icon: 'help-circle-outline'
+                    OneLineIconListItem:
+                        text: 'Exit'
+                        text_color: [1,0,0,1]
+                        on_release:
+                            app.exit_app()
+                        IconLeftWidget:
+                            icon: 'exit-to-app'
+
+
+
+
