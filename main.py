@@ -1,6 +1,6 @@
 '''
-_Title: TASK TRACKER
-_Developer: Ahmed El Otmani
+_Name: TASK TRACKER
+_Dev: Ahmed El Otmani
 _Description:
     this app helps you keep track of your daily and weekly tasks in order for you to
     manage and optimize your time more efficiently. the app lets you accompany your task with
