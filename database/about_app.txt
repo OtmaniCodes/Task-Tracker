@@ -1,7 +1,7 @@
-[u]App's Title[/u]: [b]TASK TRACKER[/b]
-[u]Version[/u]: [b]0.1[/b]
+[u]App's Name[/u]: [b]TASK TRACKER[/b]
+[u]Version[/u]: [b]1.0.0[/b]
 [u]Developer[/u]: [b]Ahmed El Otmani[/b]
-[u]Email us[/u]: [b]offbusiness00@gmail.com[/b]
+[u]Twitter[/u]: [b]@ahmed0tdc[/b]
 
 _____________________________________________
 this app helps you keep track of your
